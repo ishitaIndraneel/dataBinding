@@ -1,0 +1,12 @@
+
+<div class="row">
+    <p [ngClass]="{online: serverOnline,offline: !serverOnline }" class ="col-12">{{printServerInfo}}</p>
+    <div *ngIf = "buttonIsClicked" [ngStyle]="{'color' : serverOnline? 'green' : 'red' }">
+        <p *ngIf="serverOnline else serverOffline">
+            Online
+        </p>
+        <ng-template #serverOffline>
+            Offline
+        </ng-template>
+    </div>
+</div>

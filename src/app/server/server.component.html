@@ -1,0 +1,14 @@
+<div class="row">
+    <h1 class="paddingBottom" >Data binding App</h1>
+    <p class="col-12"><input [(ngModel)] = "serverName"></p>  
+    <p class="col-12">
+        <input class="marginRight" type="checkbox" [(ngModel)]="toggleButton"/>
+        <button class="btn btn-primary" [disabled]="toggleButton" (click)="createServer()">AppServer</button></p>
+    <app-servers
+    [child-printServerInfo] = "printServerInfo"
+    [child-is-server-online] = "serverOnline"
+    [buttonIsClicked] = "buttonIsClicked"
+    >
+    </app-servers>
+  </div>
+  
